@@ -37,7 +37,7 @@ list_all_versions() {
 
 get_url() {
 	local -r version="$1"
-	local -r arch ="$(get_arch)"
+	local -r arch="$(get_arch)"
 	local -r platform="$(get_platform)"
 	local filename
 
