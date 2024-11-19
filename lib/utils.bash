@@ -63,7 +63,7 @@ download_release() {
 	local -r filename="$2"
 
 	local -r url="$(get_url "${version}")"
-	echo "* Downloading $TOOL_NAME release $version..."
+	echo "* Downloading $TOOL_NAME release $version from $url..."
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
