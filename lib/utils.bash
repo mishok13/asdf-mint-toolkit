@@ -47,9 +47,9 @@ get_url() {
         filename = "dist_linux_arm.tar.gz"
     elif [[ ${arch} == "amd64" ]] && [[ ${platform} == "linux" ]]; then
         filename = "dist_linux.tar.gz"
-    if [[ ${arch} == "amd64" ]] && [[ ${platform} == "darwin" ]]; then
+    elif [[ ${arch} == "amd64" ]] && [[ ${platform} == "darwin" ]]; then
         filename = "dist_mac.zip"
-    if [[ ${arch} == "arm64" ]] && [[ ${platform} == "darwin" ]]; then
+    elif [[ ${arch} == "arm64" ]] && [[ ${platform} == "darwin" ]]; then
         filename = "dist_mac_m1.zip"
     else
         fail "Unsupported platform/arch";
