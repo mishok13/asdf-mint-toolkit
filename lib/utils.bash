@@ -42,15 +42,15 @@ get_url() {
     local filename
 
     if [[ ${arch} == "arm64" ]] && [[ ${platform} == "linux" ]]; then
-        filename = "dist_linux_arm64.tar.gz"
+        filename="dist_linux_arm64.tar.gz"
     elif [[ ${arch} == "arm" ]] && [[ ${platform} == "linux" ]]; then
-        filename = "dist_linux_arm.tar.gz"
+        filename="dist_linux_arm.tar.gz"
     elif [[ ${arch} == "amd64" ]] && [[ ${platform} == "linux" ]]; then
-        filename = "dist_linux.tar.gz"
+        filename="dist_linux.tar.gz"
     elif [[ ${arch} == "amd64" ]] && [[ ${platform} == "darwin" ]]; then
-        filename = "dist_mac.zip"
+        filename="dist_mac.zip"
     elif [[ ${arch} == "arm64" ]] && [[ ${platform} == "darwin" ]]; then
-        filename = "dist_mac_m1.zip"
+        filename="dist_mac_m1.zip"
     else
         fail "Unsupported platform/arch";
     fi
@@ -62,7 +62,7 @@ download_release() {
     local -r version="$1"
     local -r filename="$2"
 
-    local -r url="$(get_url ${version})"
+    local -r url="$(get_url "${version}")"
     echo "* Downloading $TOOL_NAME release $version..."
     curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
